@@ -81,13 +81,13 @@ elif category == "Temperature":
 elif category == "Currency":
     st.subheader("💰 Currency Converter")
     currency_rates = {"USD": 1, "EUR": 0.85, "GBP": 0.75, "INR": 74.5, "PKR": 280}
-    from_unit = st.selectbox("From:", list(currency_rates.keys()))
     to_unit = st.selectbox("To:", list(currency_rates.keys()))
+    from_unit = st.selectbox("From:", list(currency_rates.keys()))
     value = st.number_input("Enter value:", min_value=0.0, format="%.2f")
     
     if st.button("Convert 🔄"):
         result = convert_units(value, from_unit, to_unit, currency_rates)
-        st.success(f"{value} {from_unit} = {result:.2f} {to_unit}")
+        st.success(f" {to_unit} {value} = {result:.2f} {from_unit}   ")
 
 elif category == "Data Storage":
     st.subheader("💾 Data Storage Converter")
